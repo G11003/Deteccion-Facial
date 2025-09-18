@@ -1,0 +1,6 @@
+{
+  "sampleRate": 200,
+  "thresholdEye": 3,
+  "thresholdMouth": 2,
+  "thresholdBrows": 2
+}

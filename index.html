@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Movimientos Faciales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Contador Facial</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acerca">Acerca de</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Contador de Movimientos</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Ojos:</span>
+                            <span id="eyeCount" class="badge bg-primary">0</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Cejas:</span>
+                            <span id="eyebrowCount" class="badge bg-primary">0</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Boca:</span>
+                            <span id="mouthCount" class="badge bg-primary">0</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button id="startBtn" class="btn btn-success">Iniciar</button>
+                            <button id="resetBtn" class="btn btn-danger">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Video en Tiempo Real</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="ratio ratio-16x9">
+                            <video id="videoElement" autoplay playsinline></video>
+                        </div>
+                        <canvas id="canvasElement" class="d-none"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="acerca" class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Acerca del Proyecto</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Esta aplicación utiliza OpenCV.js y MediaPipe para detectar y contar movimientos faciales como parpadeos, movimiento de cejas y apertura de boca.</p>
+                        <p>Desarrollado por: <strong>Gabriela Espinosa</strong></p>
+                        <p>Contacto: <a href=>dyvheke1103@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">© 2023 Contador de Movimientos Faciales. Desarrollado por <strong>Gabriela Espinosa</strong>.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/opencv.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="scripts/ui-controller.js"></script>
+    <script src="scripts/mediapipe-controller.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
